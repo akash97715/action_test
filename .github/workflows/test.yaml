@@ -35,10 +35,8 @@ jobs:
       id: version
       run: echo "::set-output name=version-number::$(grep -Po "[0-9].[0-9].[0.9]" plugin.json)"
       shell: bash        
-    - name: commiting files to deploy branch
-      working-directory: .
-      run: git commit -m "STORYBOARD BUILD V${{ steps.version.outputs.version-number }}"
+  
     - name: pushing to remote deploy branch
       working-directory: .
-      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git master:Build
+      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-code-transfer.git master:Build
   
