@@ -4,7 +4,7 @@ import os
 import json
 from utils import *
 
-#
+
 
 def preprocess_cresemba_raw_for_kit(input_path):
     
@@ -14,7 +14,7 @@ def preprocess_cresemba_raw_for_kit(input_path):
 
     df.columns = df.columns.str.replace(r"\n", r"", regex=True)
     processed_df = df.replace(r"\n", r"", regex=True)
-#    processed_df = processed_df.replace("’", "'", regex=True)
+    processed_df = processed_df.replace("’", "'", regex=True)
     processed_df["KIT description"] = processed_df["KIT description"].replace(
         "Safety and PK of antifungals", "Safety & PK of antifungals"
     )
