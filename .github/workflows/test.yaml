@@ -16,6 +16,9 @@ jobs:
     - name: Preparing worktree
       working-directory: .
       run: git init
+    - name: remove origin
+      working-directory: .
+      run: git remote -v      
     - name: add remote repo
       working-directory: .
       run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-code-transfer.git
