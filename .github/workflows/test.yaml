@@ -42,8 +42,8 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: akash97716/code-transfer-test
-        token: "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"
-        #token: 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
+        token: ${{ secrets.GH_PAT }}
+        
         
     - name: pushing to remote deploy branch
       working-directory: .
