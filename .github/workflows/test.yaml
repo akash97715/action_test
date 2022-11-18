@@ -24,7 +24,7 @@ jobs:
       run: git remote -v      
     - name: add remote repo
       working-directory: .
-      run: git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-code-transfer.git
+      run: git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/code-transfer-test.git
     - name: Checking if there are files to commit…
       working-directory: .
       run: git add .
@@ -41,5 +41,5 @@ jobs:
   
     - name: pushing to remote deploy branch
       working-directory: .
-      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-code-transfer.git 
+      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/code-transfer-test.git
   
