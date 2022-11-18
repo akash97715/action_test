@@ -50,5 +50,5 @@ jobs:
         
     - name: pushing to remote deploy branch
       working-directory: .
-      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git main:master
+      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git master:star
   
