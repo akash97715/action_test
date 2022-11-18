@@ -14,28 +14,28 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: Preparing worktree
-      working-directory: ./action-train
+      working-directory: .
       run: git init
     - name: add remote repo
-      working-directory: ./action-train
+      working-directory: .
       run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git
     - name: Checking if there are files to commit…
-      working-directory: ./action-train
+      working-directory: .
       run: git add .
     - name: config git
-      working-directory: ./action-train
+      working-directory: .
       run: |
         git config user.email ${{ github.actor }}@noreply.com
         git config user.name ${{ github.actor }}
     - name: get version
-      working-directory: ./action-train
+      working-directory: .
       id: version
       run: echo "::set-output name=version-number::$(grep -Po "[0-9].[0-9].[0.9]" plugin.json)"
       shell: bash        
     - name: commiting files to deploy branch
-      working-directory: ./action-train
+      working-directory: .
       run: git commit -m "STORYBOARD BUILD V${{ steps.version.outputs.version-number }}"
     - name: pushing to remote deploy branch
-      working-directory: ./action-train
+      working-directory: .
       run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git master:Build
   
