@@ -14,8 +14,12 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
+    
     - name: checkout
       uses: actions/checkout@v2
+      with:
+        repository: akash97716/code-transfer-test
+        token: ${{ secrets.GH_PAT }}
     - name: Preparing worktree
       working-directory: .
       run: git init
@@ -40,9 +44,7 @@ jobs:
       shell: bash        
     - name: Checkout private tool
       uses: actions/checkout@v3
-      with:
-        repository: akash97716/code-transfer-test
-        token: ${{ secrets.GH_PAT }}
+
         
         
     - name: pushing to remote deploy branch
