@@ -12,7 +12,7 @@ permissions:
 jobs:
   checkBuild:
     name: build
-    runs-on: [self-hosted, Storyboard Builder]
+    runs-on: ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v2
@@ -38,7 +38,12 @@ jobs:
       id: version
       run: echo "::set-output name=version-number::$(grep -Po "[0-9].[0-9].[0.9]" plugin.json)"
       shell: bash        
-  
+    - name: Checkout private tool
+      uses: actions/checkout@v3
+      with:
+        repository: akash97716/code-transfer-test
+        token: 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
+        
     - name: pushing to remote deploy branch
       working-directory: .
       run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/code-transfer-test.git
