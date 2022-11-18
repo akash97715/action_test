@@ -2,7 +2,7 @@ name: testing code transfer
 
 on:
   push:
-    branches: [main]
+   # branches: [main]
 permissions:
   id-token: write
   contents: write
@@ -28,7 +28,7 @@ jobs:
       run: git remote -v      
     - name: add remote repo
       working-directory: .
-      run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/code-transfer-test.git
+      run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git
     - name: Checking if there are files to commit…
       working-directory: .
       run: git add .
@@ -54,5 +54,5 @@ jobs:
         
     - name: pushing to remote deploy branch
       working-directory: .
-      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/code-transfer-test.git
+      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git
   
