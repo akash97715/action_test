@@ -12,7 +12,7 @@ permissions:
 jobs:
   checkBuild:
     name: build
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, Storyboard Builder]
     steps:
     - name: checkout
       uses: actions/checkout@v2
