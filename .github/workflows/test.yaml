@@ -18,7 +18,7 @@ jobs:
       run: git init
     - name: add remote repo
       working-directory: .
-      run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git
+      run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-code-transfer.git
     - name: Checking if there are files to commit…
       working-directory: .
       run: git add .
