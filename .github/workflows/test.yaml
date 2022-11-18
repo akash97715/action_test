@@ -61,7 +61,7 @@ jobs:
       with:
         repository: 'akash97716/code-transfer-test'
         ref: 'main'
-        token: ${{secrets.CLONE_PAT}}
+        token: ${{secrets.GH_PAT}}
     - name: deploy
       env:
           userToken: ${{secrets.GH_PAT}}
