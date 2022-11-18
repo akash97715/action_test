@@ -44,11 +44,11 @@ jobs:
       shell: bash        
     - name: commiting files to deploy branch
       working-directory: .
-      run: git commit -m "STORYBOARD BUILD V${{ steps.version.outputs.version-number }}"
+      run: git commit  -m "STORYBOARD BUILD V${{ steps.version.outputs.version-number }}"
 
         
         
     - name: pushing to remote deploy branch
       working-directory: .
-      run: git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git master:star
+      run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git master:star
   
