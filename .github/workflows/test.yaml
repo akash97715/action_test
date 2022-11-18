@@ -14,28 +14,28 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: Preparing worktree
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: git init
     - name: add remote repo
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git
     - name: Checking if there are files to commit…
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: git add .
     - name: config git
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: |
         git config user.email ${{ github.actor }}@noreply.com
         git config user.name ${{ github.actor }}
     - name: get version
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       id: version
       run: echo "::set-output name=version-number::$(grep -Po "[0-9].[0-9].[0.9]" plugin.json)"
       shell: bash        
     - name: commiting files to deploy branch
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: git commit -m "STORYBOARD BUILD V${{ steps.version.outputs.version-number }}"
     - name: pushing to remote deploy branch
-      working-directory: ./dss_webapp_template
+      working-directory: ./action-train
       run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/pfizer-analytics/interactive-storyboard-ui.git master:Build
   
