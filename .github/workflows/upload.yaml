@@ -29,6 +29,8 @@ jobs:
     - name: Preparing worktree
       working-directory: .
       run: |
+          git config user.email ${{ github.actor }}@noreply.com
+          git config user.name ${{ github.actor }}    
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-from-local sm
           #rm everything but the .git directory
           ls 
