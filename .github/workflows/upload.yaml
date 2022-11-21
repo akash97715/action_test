@@ -37,7 +37,10 @@ jobs:
           cp -R utils.py sm/
           #copy source\files target
           cd sm
+          git config user.email ${{ github.actor }}@noreply.com
+          git config user.name ${{ github.actor }}         
           git add .
+          
           git diff-index --quiet HEAD || git commit -m "tesing copy"
           ls -lrt
           git push https://github.com/akash97715/sm.git master
