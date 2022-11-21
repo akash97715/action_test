@@ -27,7 +27,8 @@ jobs:
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-from-local sm
           #rm everything but the .git directory
           ls 
-          cp -R action_test/ sm/
+          ls sm/*
+          cp -R utils.py sm/
           #copy source\files target
           cd sm
           git add .
