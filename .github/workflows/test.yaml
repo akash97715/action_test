@@ -59,10 +59,7 @@ jobs:
         ref: 'main'
         token: ${{secrets.GH_PAT}}
     - name: deploy
-      env:
-          userToken: ${{secrets.GH_PAT}}
-      uses: ./
-      id: deployment
+
       with:
         repo: 'akash97715/action_test'
         branch: 'master'
