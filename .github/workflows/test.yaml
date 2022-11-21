@@ -51,11 +51,7 @@ jobs:
     - name: pushing to remote deploy branch
       working-directory: .
       run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git master:star
-  deploy:
-    needs: [checkBuild]
-    runs-on: ubuntu-latest
 
-    steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -70,7 +66,6 @@ jobs:
       with:
         repo: 'akash97715/action_test'
         branch: 'master'
-        pluginId: 'storyboard-ui-V2'
-        dssenv: emea_design
+
     - name: Get the output status
       run: echo "The status was ${{ steps.deployment.outputs.status }}"  
