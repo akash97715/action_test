@@ -24,7 +24,7 @@ jobs:
     - name: Preparing worktree
       working-directory: .
       run: |
-          git clone https://.:${{ secrets.GH_PAT }}@github.com/akash97716/test-from-local sm
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-from-local sm
           #rm everything but the .git directory
           cp -R test-from-local sm/
           #copy source\files target
