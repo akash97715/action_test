@@ -31,7 +31,11 @@ jobs:
     - name: Checking if there are files to commit…
       working-directory: .
       run: git add .
-
+    - name: config git
+      working-directory: .
+      run: |
+        git config user.email ${{ github.actor }}@noreply.com
+        git config user.name ${{ github.actor }}
        
     - name: commiting files to deploy branch
       working-directory: .
