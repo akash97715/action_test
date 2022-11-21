@@ -24,10 +24,11 @@ jobs:
     - name: Preparing worktree
       working-directory: .
       run: |
-          git clone https://.:${{ secrets.GH_PAT }}@github.com/akash97716/test-from-local
+          git clone https://.:${{ secrets.GH_PAT }}@github.com/akash97716/test-from-local sm
           #rm everything but the .git directory
+          cp -R test-from-local sm/
           #copy source\files target
-          cd test-from-local
+          cd sm
           git add .
-          git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
-          git push target master
+          git diff-index --quiet HEAD || git commit -m "tesing copy"
+          git push https://github.com/akash97715/sm.git master
