@@ -26,7 +26,7 @@ jobs:
       run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/akash97716/test-from-local
           #rm everything but the .git directory
-          copy source\files target
+          #copy source\files target
           cd test-from-local
           git add .
           git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
