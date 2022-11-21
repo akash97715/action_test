@@ -2,7 +2,7 @@ name: testing code transfer
 
 on:
   push:
-    branches: [main]
+    branches: [statusss]
 permissions:
   id-token: write
   contents: write
