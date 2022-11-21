@@ -44,7 +44,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        repository: 'akash97716/code-transfer-test'
+        repository: 'akash97716/test-from-local'
 
         token: ${{secrets.GH_PAT}}
     - name: pushing to remote deploy branch
