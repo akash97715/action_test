@@ -50,7 +50,7 @@ jobs:
       run: git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/akash97715/action_test.git master:star
   deploy:
     needs: [checkBuild]
-    runs-on: [self-hosted, Storyboard Builder]
+    runs-on: [self-hosted]
     steps:
     
     - name: Checkout
