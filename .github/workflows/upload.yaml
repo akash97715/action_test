@@ -32,11 +32,14 @@ jobs:
     
           git clone https://.:${{ secrets.GH_PAT }}@github.com/akash97716/test-from-local sm
           #rm everything but the .git directory
-          ls 
+          #ls 
           ls sm/*
           #cp -R utils.py sm/
           #copy source\files target
+          zip -r plugin_to_deploy.zip sm
+          ls -lrt
           cd sm
+
           git config user.email ${{ github.actor }}@noreply.com
           git config user.name ${{ github.actor }}         
           git add .
