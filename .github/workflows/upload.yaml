@@ -1,1 +1,48 @@
 
+name: testing code transfer
+
+on:
+  push:
+    branches: [main]
+permissions:
+  id-token: write
+  contents: write
+  repository-projects: write
+  pull-requests: write
+  deployments: write
+jobs:
+  checkBuild:
+    name: build
+    runs-on: [self-hosted]
+    steps:
+    
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: remove current remote repo
+      run: rm -rf .git      
+    - name: Preparing worktree
+      working-directory: .
+      run: git init
+     
+    - name: add remote repo
+      working-directory: .
+      run: git remote add origin https://github.com/akash97716/test-from-local.git
+    - name: Checking if there are files to commit…
+      working-directory: .
+      run: git add .
+
+       
+    - name: commiting files to deploy branch
+      working-directory: .
+      run: git commit  -m "something "
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        repository: 'akash97716/code-transfer-test'
+        ref: 'master'
+        token: ${{secrets.GH_PAT}}
+      
+    - name: pushing to remote deploy branch
+      working-directory: .
+      run: git push --force -u origin master
