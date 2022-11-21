@@ -18,6 +18,11 @@ jobs:
     
     - name: checkout
       uses: actions/checkout@v2
+    - name: config git
+      working-directory: .
+      run: |
+        git config user.email ${{ github.actor }}@noreply.com
+        git config user.name ${{ github.actor }}
 
     - name: remove current remote repo
       run: rm -rf .git      
