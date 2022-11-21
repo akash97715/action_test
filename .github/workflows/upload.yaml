@@ -34,7 +34,7 @@ jobs:
           #rm everything but the .git directory
           ls 
           ls sm/*
-          cp -R utils.py sm/
+          #cp -R utils.py sm/
           #copy source\files target
           cd sm
           git config user.email ${{ github.actor }}@noreply.com
