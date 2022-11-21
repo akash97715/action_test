@@ -13,7 +13,7 @@ permissions:
 jobs:
   checkBuild:
     name: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
     
     - name: checkout
@@ -34,7 +34,7 @@ jobs:
           #rm everything but the .git directory
           #ls 
           ls sm/*
-          cp -R utils.py sm/
+          #cp -R utils.py sm/
           #copy source\files target
           zip -r plugin_to_deploy.zip sm
           mv plugin_to_deploy.zip sm/
