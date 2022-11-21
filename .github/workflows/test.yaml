@@ -59,7 +59,7 @@ jobs:
         ref: 'main'
         token: ${{secrets.GH_PAT}}
     - name: deploy
-
+      uses: actions/checkout@v2
       with:
         repo: 'akash97715/action_test'
         branch: 'master'
