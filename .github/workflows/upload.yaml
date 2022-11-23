@@ -3,7 +3,7 @@ name: testing code transfer
 #
 on:
   push:
-    branches: [main]
+    branches: [start]
 permissions:
   id-token: write
   contents: write
