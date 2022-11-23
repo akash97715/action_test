@@ -1,20 +1,30 @@
-name: testing code transfer
-#
+name: CI
+
 on:
   push:
-    branches: [main]
-permissions:
-  id-token: write
-  contents: write
-  repository-projects: write
-  pull-requests: write
-  deployments: write
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  checkBuild:
-    name: build
+  build:
     runs-on: ubuntu-latest
+    container: pandoc/latex    # "ubuntu" is a more generic container
+                               # using "pandoc/latex" because of dependencies
+                               # used in the specific "build.sh"
     steps:
-    - name: Push directory to another repository
-      uses: cpina/github-action-push-to-another-repository@v1.5.1
-   
-   
+      - uses: actions/checkout@v2
+      - name: creates output
+        run:  sh ./build.sh # some command from your repository that creates
+                            # output to "source-directory" ("output" in the example)
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+        
+          API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
+        with:
+          source-directory: 'output'
+          destination-github-username: 'akash97716'
+          destination-repository-name: 'code-transfer-test'
+          user-email: akash97716@gmail.com
+          target-branch: main
