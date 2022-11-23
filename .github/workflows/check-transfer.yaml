@@ -24,7 +24,7 @@ jobs:
         
           API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
         with:
-          source-directory: 'output'
+         
           destination-github-username: 'akash97716'
           destination-repository-name: 'code-transfer-test'
           user-email: akash97716@gmail.com
