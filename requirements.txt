@@ -1,4 +1,5 @@
-torch
-transformers
-seaborn
-openpyxl
+#torch
+#transformers
+#seaborn
+#openpyxl
+requests>=2.26.0
