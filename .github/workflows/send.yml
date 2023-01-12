@@ -12,7 +12,7 @@ on:
       workflow2_github_account:
         description: 'GitHub Account Owner'
         required: true
-        default: 'akas97716'
+        default: 'akash97716'
       
       workflow2_repo_github:
         description: 'GitHub Repository Name'
