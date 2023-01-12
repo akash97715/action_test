@@ -7,17 +7,17 @@ on:
       workflow2_name:
         description: 'Workflow2 Name for Triggering'
         required: true
-        default: 'Workflow2'
+        default: 'triggeriop.yml'
       
       workflow2_github_account:
         description: 'GitHub Account Owner'
         required: true
-        default: 'sumitraj0103'
+        default: 'akas97716'
       
       workflow2_repo_github:
         description: 'GitHub Repository Name'
         required: true
-        default: 'Letsdevops'
+        default: 'code-transfer-test'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
