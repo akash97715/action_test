@@ -47,4 +47,4 @@ jobs:
           
           git diff-index --quiet HEAD || git commit -m "tesing copy"
           ls -lrt
-          git push --force https://${{ github.actor }}:${{ secrets.GH_PAT }}@github.com/akash97715/sm.git master
+          git push --force https://${{ github.actor }}:${{ secrets.GH_PATONE }}@github.com/akash97715/sm.git master
