@@ -13,7 +13,7 @@ permissions:
 jobs:
   checkBuild:
     name: build
-    runs-on: [self-hosted, akash]
+    runs-on: ubuntu-latest
     steps:
     
     - name: checkout
