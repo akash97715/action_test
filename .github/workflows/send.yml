@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       pat_token: ${{ secrets.GH_PAT }}
-      #payload_Baseline_Number: ${{ github.GITHUB_REPOSITORY }}
-      payload_Baseline_Number: hhhg
+      payload_Baseline_Number: ${{ GITHUB_REPOSITORY }}
+      #payload_Baseline_Number: hhhg
       payload_Baseline_Revision: "zsfdgsdbgngffdwdx1dxvv2"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
