@@ -29,7 +29,7 @@ jobs:
       pat_token: ${{ secrets.GH_PAT }}
       payload_Baseline_Number: ${{ github.event.repository.name }}
       #payload_Baseline_Number: hhhg
-      payload_Baseline_Revision: ${{ github.event.schedule.user.login }}
+      payload_Baseline_Revision: ${{github.actor}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
